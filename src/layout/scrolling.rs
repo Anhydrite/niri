@@ -28,7 +28,9 @@ use crate::utils::ResizeEdge;
 use crate::window::ResolvedWindowRules;
 
 /// Amount of touchpad movement to scroll the view for the width of one working area.
-const VIEW_GESTURE_WORKING_AREA_MOVEMENT: f64 = 1200.;
+// Upstream: 1200. Local patch: 600 doubles the horizontal 3-finger swipe
+// sensitivity (half the finger travel for a full view width).
+const VIEW_GESTURE_WORKING_AREA_MOVEMENT: f64 = 600.;
 
 /// A scrollable-tiling space for windows.
 #[derive(Debug)]
